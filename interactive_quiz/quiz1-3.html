@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>repl.it</title>
+<style>
+#panel, .flip {
+  font-size: 14px;
+  padding: 10px;
+  text-align: left;
+  background-color: #4CAF50;
+  color: white;
+  border: solid 1px #a6d8a8;
+  margin-right: 50%
+}
+
+#panel {
+  display: none;
+}
+</style>
+  </head>
+  <body>
+
+  <label for="no1">1번:</label>
+  <select name="no1" id="no1">
+    <option value="audi1">선택하세요</option>
+    <option value="volvo1">딥러닝</option>
+    <option value="saab1">인공지능</option>
+    <option value="opel1">머신러닝</option> </select> <br><br>
+    <label for="no2">2번:</label>
+  <select name="no2" id="no2">
+    <option value="audi2">선택하세요</option>
+    <option value="volvo2">딥러닝</option>
+    <option value="saab2">인공지능</option>
+    <option value="opel2">머신러닝</option>  </select> <br><br>
+      <label for="no3">3번:</label>
+  <select name="no3" id="no3">
+    <option value="audi3">선택하세요</option>
+    <option value="volvo3">딥러닝</option>
+    <option value="saab3">인공지능</option>
+    <option value="opel3">머신러닝</option>  </select>
+    <br>
+    <br>
+
+<p class="flip" onclick="myFunction()">정답 보기</p>
+
+<div id="panel">
+  <p>1번: 인공지능</p>
+  <p>2번: 머신러닝</p>
+  <p>3번: 딥러닝</p>
+</div>
+
+
+<script>
+function myFunction() {
+  document.getElementById("panel").style.display = "block";
+}
+</script>
+  </body>
+</html>
