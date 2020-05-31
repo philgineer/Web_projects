@@ -1,0 +1,87 @@
+<html>
+
+이 포스트는 다음주 월요일 업로드 예정인 "머신러닝 한방정리" 2강에 쓰일 쿼즈 문제를 테스트용으로 임시저장한 포스트입니다.
+
+
+  <h3>1. 학습</h3>
+
+    Iteration:
+
+    <label for="learning">학습 </label>
+    <select onchange="test()" id="numiter">
+      <option value="n"></option>
+      <option value="1">1</option>
+      <option value="2">2</option>
+      <option value="3">3</option>
+    </select>  회차<br><br>
+      <p id="mydiv" style = "max-width: 400px;min-width: 100px;background-color:lightgray;">  </p>
+
+  <script>
+
+  function test(){
+  var select_id = document.getElementById("numiter");
+  var sval = select_id.options[select_id.selectedIndex].value;
+  var text1 = '<p style="font-size:13px"><br>당신은 다음 명령을 수행하는 기계다.<br><br> 명령: 1번부터 10번 문제까지, "가설" 칸을 더블클릭하여 아무 숫자를 골라 넣어라.<br></p>';
+  var text2='<p style="font-size:13px"><br>당신은 다음 명령을 수행하는 기계다.<br><br> 명령: 1번부터 10번 문제까지 다음을 실행한다.<br><br>1.  "가설-정답" 칸이 <u>초록색</u>일 경우:<br>&nbsp&nbsp&nbsp아무 것도 하지 않는다.<br><br>2.  "가설-정답" 칸이 <u>주황색</u>일 경우:<br>&nbsp&nbsp&nbsp값이 양수이면 "가설"을 1 작은 수로 바꾸고,<br>&nbsp&nbsp&nbsp음수이면 "가설"을 1 큰 수로 바꾼다.<br><br>3.  "가설-정답" 칸이 <u>빨간색</u>일 경우:<br>&nbsp&nbsp&nbsp값이 양수이면 "가설"을 3 작은 수로 바꾸고,<br>&nbsp&nbsp&nbsp음수이면 "가설"을 3 큰 수로 바꾼다.<br><br></p>';
+  if(sval == 1){
+    document.getElementById("mydiv").innerHTML=text1;
+  } else if(sval == 2 || sval == 3){
+    document.getElementById("mydiv").innerHTML=text2;
+  }
+  }
+  </script>
+
+<script src="https://bossanova.uk/jexcel/v3/jexcel.js"></script>
+<script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jexcel/v3/jexcel.css" type="text/css" />
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" type="text/css" />
+
+<div id="spreadsheet"></div>
+
+<script>
+var data = [
+  ['input', 3, '=A1-B1'],
+  ['input', 5, '=A2-B2'],
+  ['input', 2, '=A3-B3'],
+  ['input', 7, '=A4-B4'],
+  ['input', 4, '=A5-B5'],
+  ['input', 1, '=A6-B6'],
+  ['input', 10, '=A7-B7'],
+  ['input', 9, '=A8-B8'],
+  ['input', 5, '=A9-B9'],
+  ['input', 7, '=A10-B10']
+];
+
+jexcel(document.getElementById('spreadsheet'), {
+    data:data,
+    columns: [
+        { type: 'dropdown', title:'가설', width:'80', source:['0','1','2','3','4','5','6','7','8','9','10'] },
+        { type: 'text', title:'정답', width:'80', mask:'?' },
+        { type: 'text', title:'가설-정답', width:'100'},
+
+    ],
+    updateTable:function(instance, cell, col, row, val, label, cellName) {
+
+              if (col == 2) {
+
+                  if (parseFloat(label) == 0) {
+                    cell.style.backgroundColor = 'green'
+                  }
+                  else if (parseFloat(label) > 2 || parseFloat(label) < -2) {
+                      cell.style.backgroundColor = 'red';
+                  }
+                  else if (parseFloat(label) <= 2 || parseFloat(label) >= -2) {
+                    cell.style.backgroundColor = 'orange'
+                  }
+                  else {
+                      cell.style.backgroundColor = 'white';
+                  }
+              }
+
+    },
+    columnSorting:false,
+});
+</script>
+
+</div>
+</html>

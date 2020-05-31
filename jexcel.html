@@ -1,0 +1,58 @@
+<html>
+
+<h3>1. Jexcel</h3>
+
+<script src="https://bossanova.uk/jexcel/v3/jexcel.js"></script>
+<script src="https://bossanova.uk/jsuites/v2/jsuites.js"></script>
+<link rel="stylesheet" href="https://bossanova.uk/jexcel/v3/jexcel.css" type="text/css" />
+<link rel="stylesheet" href="https://bossanova.uk/jsuites/v2/jsuites.css" type="text/css" />
+
+<div id="spreadsheet"></div>
+
+<script>
+var data = [
+  ['input', 3, '=A1-B1'],
+  ['input', 5, '=A2-B2'],
+  ['input', 2, '=A3-B3'],
+  ['input', 7, '=A4-B4'],
+  ['input', 4, '=A5-B5'],
+  ['input', 1, '=A6-B6'],
+  ['input', 10, '=A7-B7'],
+  ['input', 9, '=A8-B8'],
+  ['input', 5, '=A9-B9'],
+  ['input', 7, '=A10-B10']
+];
+
+jexcel(document.getElementById('spreadsheet'), {
+    data:data,
+    columns: [
+        { type: 'dropdown', title:'Hypothesis', width:'140', source:['0','1','2','3','4','5','6','7','8','9','10'] },
+        { type: 'text', title:'Label', width:'140', mask:'?' },
+        { type: 'text', title:'Hypothesis-Label', width:'140'},
+
+    ],
+    updateTable:function(instance, cell, col, row, val, label, cellName) {
+
+              if (col == 2) {
+
+                  if (parseFloat(label) == 0) {
+                    cell.style.backgroundColor = 'green'
+                  }
+                  else if (parseFloat(label) > 2 || parseFloat(label) < -2) {
+                      cell.style.backgroundColor = 'red';
+                  }
+                  else if (parseFloat(label) <= 2 || parseFloat(label) >= -2) {
+                    cell.style.backgroundColor = 'orange'
+                  }
+                  else {
+                      cell.style.backgroundColor = 'white';
+                  }
+              }
+
+    },
+    columnSorting:false,
+});
+</script>
+
+</div>
+</html>

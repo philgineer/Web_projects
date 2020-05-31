@@ -1,0 +1,43 @@
+<html>
+<pre>당신은 다음 명령을 그대로 수행하는 기계다.
+
+명령: 제목에 다음 단어들 중 적어도 하나가 포함된 메일을 체크한다.
+      {"초특가", "판매", "무료"}</pre>
+</div>
+</div>
+<br />
+<input id="checkBox1" name="question1" onclick="myFunction()" type="checkbox" />
+       <label>(1) 온라인 게임장 짜릿한 타격감 96% 환수율 무료머니 5만으로 먼저 체험하세요!</label><br />
+<input id="checkBox2" name="question1" onclick="myFunction()" type="checkbox" />
+       <label>(2) 전상­품 1 + 1 이벤트 총알 배송! 특가 패키지 상품 한정 판매!</label><br />
+<input id="checkBox3" name="question1" onclick="myFunction()" type="checkbox" />
+       <label>(3) 영업1팀 판매실적보고서 수정사항 확인 바랍니다.</label> <br />
+<input id="checkBox4" name="question1" onclick="myFunction()" type="checkbox" />
+     <label>(4) 더블 배당 이벤트━가입 즉시 5만━정식인증━모바일 지원</label>
+
+
+<br />
+<br />결과: <br />
+<div id="text" style="display: none;">
+정답입니다!</div>
+<script type="text/javascript">
+
+function myFunction() {
+  // Get the checkbox
+  var checkBox1 = document.getElementById("checkBox1");
+  var checkBox2 = document.getElementById("checkBox2");
+  var checkBox3 = document.getElementById("checkBox3");
+  var checkBox4 = document.getElementById("checkBox4");
+
+  // Get the output text
+  var text = document.getElementById("text");
+
+  // If the checkbox is checked, display the output text
+  if (checkBox1.checked == true && checkBox2.checked == true && checkBox3.checked && !(checkBox4.checked)){
+    text.style.display = "block";
+  } else {
+    text.style.display = "none";
+  }
+}
+</script>
+</html>
