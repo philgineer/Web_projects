@@ -1,30 +1,112 @@
 <html>
+  <head>
+    <style>
+/* The container */
+.container {
+  display: block;
+  position: relative;
+  padding-left: 35px;
+  margin-bottom: 12px;
+  cursor: pointer;
+  font-size: 16px;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* Hide the browser's default checkbox */
+.container input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+/* Create a custom checkbox */
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+}
+
+/* On mouse-over, add a grey background color */
+.container:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+/* When the checkbox is checked, add a blue background */
+.container input:checked ~ .checkmark {
+  background-color: #2196F3;
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+/* Show the checkmark when checked */
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 9px;
+  top: 5px;
+  width: 5px;
+  height: 10px;
+  border: solid white;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+</style>
+      </head>
+      
+      <body>
+            
       <a href='https://www.philgineer.com/2020/05/machine-learning01.html'>머신러닝 한방 정리 1.1 - 그래서 '학습'이 뭔데? (1)<a><br><br>
 <h4>
 문제 1
 </h4>
-<pre>당신은 다음 명령을 그대로 수행하는 기계다.
+당신은 다음 명령을 그대로 수행하는 기계다.
 
-명령: 제목에 다음 단어들 중 적어도 하나가 포함된 메일을 체크한다.
-      {"초특가", "판매", "무료"}</pre>
-</div>
-</div>
+<p style="background-color:lightgrey; width:80%;"><br>
+ 명령:  제목에 다음 단어들 중 적어도 하나가 포함된 메일을 체크한다.<br>
+ &nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {"초특가", "판매", "무료"}
+<br><br></p>
 <br />
-<input id="checkBox1" name="question1" onclick="myFunction()" type="checkbox" />
-       <label>(1) 온라인 게임장 짜릿한 타격감 96% 환수율 무료머니 5만으로 먼저 체험하세요!</label><br />
-<input id="checkBox2" name="question1" onclick="myFunction()" type="checkbox" />
-       <label>(2) 전상­품 1 + 1 이벤트 총알 배송! 특가 패키지 상품 한정 판매!</label><br />
-<input id="checkBox3" name="question1" onclick="myFunction()" type="checkbox" />
-       <label>(3) 영업1팀 판매실적보고서 수정사항 확인 바랍니다.</label> <br />
-<input id="checkBox4" name="question1" onclick="myFunction()" type="checkbox" />
-     <label>(4) 더블 배당 이벤트━가입 즉시 5만━정식인증━모바일 지원</label>
+
+<label class="container">(1) 온라인 게임장 짜릿한 타격감 96% 환수율 무료머니 5만으로 먼저 체험하세요!
+  <input id="checkBox1" name="question1" onclick="myFunction()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">(2) 전상­품 1 + 1 이벤트 총알 배송! 특가 패키지 상품 한정 판매!
+  <input id="checkBox2" name="question1" onclick="myFunction()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">(3) 영업1팀 판매실적보고서 수정사항 확인 바랍니다.
+  <input id="checkBox3" name="question1" onclick="myFunction()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">(4) 더블 배당 이벤트━가입 즉시 5만━정식인증━모바일 지원
+  <input id="checkBox4" name="question1" onclick="myFunction()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
 
 
 <br />
 <br />결과: <br />
 <div id="text" style="display: none;">
-정답입니다!</div>
-<script type="text/javascript">
+<b style="color:blue">정답입니다!</b></div>
 
 function myFunction() {
   // Get the checkbox
@@ -97,4 +179,5 @@ function myFunction2() {
   }
 }
 </script>
+      </body>
 </html>
