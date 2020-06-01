@@ -108,6 +108,49 @@
 <div id="text" style="display: none;">
 <b style="color:blue">정답입니다!</b></div>
 
+<h4>
+문제 2
+</h4>
+당신은 다음 명령 두 가지를 그대로 수행하는 기계다.
+<p style="background-color:lightgrey; width:80%;"><br>
+명령1:  제목에 다음 단어들 중 적어도 하나가 포함된 메일을 체크한다.<br>
+ &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;  &nbsp;  {"초특가", "무료", "더블 배당"}
+<br><br><br>
+명령2: 제목에 "판매"가 포함된 경우, 다음을 순서대로 실행한다.<br><br>
+   &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;  I. 다음과 같은 단어들이 제목에 함께 있는 경우, 체크하지 않는다:<br>
+   &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  &nbsp;&nbsp;  &nbsp;   {"업무", "보고서", "영업"}
+<br><br>
+     &nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; II. I의 조건에 해당하지 않는 경우, 체크한다.<br><br></p>
+</div>
+</div>
+<br />
+ 
+
+<label class="container">(1) 온라인 게임장 짜릿한 타격감 96% 환수율 무료머니 5만으로 먼저 체험하세요!
+  <input id="checkBox21" name="question1" onclick="myFunction2()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">(2) 전상­품 1 + 1 이벤트 총알 배송! 특가 패키지 상품 한정 판매!
+  <input id="checkBox22" name="question1" onclick="myFunction2()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">(3) 영업1팀 판매실적보고서 수정사항 확인 바랍니다.
+  <input id="checkBox23" name="question1" onclick="myFunction2()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+<label class="container">(4) 더블 배당 이벤트━가입 즉시 5만━정식인증━모바일 지원
+  <input id="checkBox24" name="question1" onclick="myFunction2()" type="checkbox">
+  <span class="checkmark"></span>
+</label>
+
+<br />
+<br />
+결과:<br />
+<div id="text2" style="display: none;">
+<b style="color:blue">정답입니다!</b></div>
+
+<script>  
+
 function myFunction() {
   // Get the checkbox
   var checkBox1 = document.getElementById("checkBox1");
@@ -125,41 +168,7 @@ function myFunction() {
     text.style.display = "none";
   }
 }
-</script>
-      
-      <br><br><h4>
-문제 2
-</h4>
-<pre>당신은 다음 명령 두 가지를 그대로 수행하는 기계다.
 
-명령1: 제목에 다음 단어들 중 적어도 하나가 포함된 메일을 체크한다.
-       {"초특가", "무료", "더블 배당"}
-
-명령2: 제목에 "판매"가 포함된 경우, 다음을 순서대로 실행한다.
-       I. 다음과 같은 단어들이 제목에 함께 있는 경우, 체크하지 않는다:
-          {"업무", "보고서", "영업"}
-
-       II. I의 조건에 해당하지 않는 경우, 체크한다.
-</pre>
-</div>
-</div>
-<br />
-<input id="checkBox21" name="question1" onclick="myFunction2()" type="checkbox" />
-       <label>(1) 온라인 게임장 짜릿한 타격감과 96% 환수율 무료머니 5만으로 먼저 체험하세요!</label><br />
-<input id="checkBox22" name="question1" onclick="myFunction2()" type="checkbox" />
-       <label>(2) 전상­품 1 + 1 이벤트 총알 배송! 특가 패키지 상품 한정 판매!</label><br />
-<input id="checkBox23" name="question1" onclick="myFunction2()" type="checkbox" />
-       <label>(3) 영업1팀 판매실적보고서 수정사항 확인 바랍니다.</label> <br />
-<input id="checkBox24" name="question1" onclick="myFunction2()" type="checkbox" />
-     <label>(4) 더블 배당 이벤트━가입 즉시 5만━정식인증━모바일 지원</label>
- 
-
-<br />
-<br />
-결과:<br />
-<div id="text2" style="display: none;">
-정답입니다!</div>
-<script type="text/javascript">  
 
 function myFunction2() {
   // Get the checkbox
