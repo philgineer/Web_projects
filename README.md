@@ -6,5 +6,5 @@ My web projects
   Check My Interactive Quizzes: https://philgineer.github.io/web_projects/</li>
 
 <li>
-Udemy Course: 20 Web Projects With Vanilla JavaScript
+Udemy Course: 20 Web Projects With Vanilla JavaScript<br>
 Check My Javascript Projects: </li>
