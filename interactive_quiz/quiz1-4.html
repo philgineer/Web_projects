@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <style>
+      #panel, .flip {
+        font-size: 14px;
+        padding: 5px;
+        text-align: center;
+        background-color: #4CAF50;
+        color: white;
+        border: solid 1px #a6d8a8;
+        border-radius: 3px;
+        display: block;
+        align: center;
+        width: 50%;
+        margin-left: 10px;
+      }
+      #panel {
+        visibility: hidden;
+      }
+
+      .container {
+        background-color: #fff;
+        border-radius: 4px;
+        box-shadow: 0 1px 6px rgba(0, 0, 0, 0.3);
+        width: 400px;
+        margin: 10px, 10px, 10px, 10px;
+      }
+
+      input {
+        border: 2.5px solid #f0f0f0;
+        border-radius: 4px;
+        width: 50px;
+        height: 18px;
+        padding: 0px;
+        font-size: 15px;
+        text-align: center;
+      }
+
+      input:focus {
+        outline: 0;
+        border-color: #ddd;
+      }
+
+      </style>
+  </head>
+  <body>
+<div class="container"><br>
+    <div style="text-align: center;">
+    <span style="background-color: white; font-family: &quot;arial&quot;;"><span style="color: #666666;">예측하려는 값이&nbsp;</span><input id="input1" maxlength="2" size="2" type="text" onchange="test()" /><span style="color: #666666;">&nbsp;값이면&nbsp;</span><input onchange="test()" id="input2" maxlength="2" size="2" type="text" /><span style="color: #666666;">&nbsp;문제이며,</span></span></div><br>
+    <div style="text-align: center;">
+    <span style="background-color: white; font-family: &quot;arial&quot;;"><span style="color: #666666;">예측하려는 값이&nbsp;</span><input onchange="test()" id="input3" maxlength="2" size="2" type="text" /><span style="color: #666666;">&nbsp;값이면&nbsp;</span><input onchange="test()" id="input4" maxlength="2" size="2" type="text" /><span style="color: #666666;">&nbsp;문제다.</span></span></div>
+    <div style="text-align: center;">
+    <span style="background-color: white;"><br /></span></div>
+    <div style="text-align: center;">
+    <span style="background-color: white;"><br /></span></div>
+    <div style="text-align: center;">
+    <span style="background-color: white;"><span style="color: #666666; font-family: &quot;arial&quot;;"></span><br /></span>
+    <div style="color: black; font-family: &quot;Times New Roman&quot;;">
+    <span style="color: #666666; font-family: &quot;arial&quot;;"><span style="color: #666666; font-family: &quot;arial&quot;;"><span style="background-color: white;"><span style="color: #666666; font-family: &quot;arial&quot;;">훈련 데이터에&nbsp;</span><input onchange="test()" id="input5" maxlength="3" size="3" type="text" /><span style="color: #666666; font-family: &quot;arial&quot;;"><span style="color: #6aa84f;"><b>이 있다면&nbsp;<input onchange="test()" id="input6" maxlength="2" size="2" type="text" /> 학습</b></span><span style="color: #666666;">이고</span></span></span></span></span></div>
+    <span style="background-color: white;"><span style="color: #666666; font-family: &quot;arial&quot;;">
+    </span>
+    </span><br />
+    <div style="color: black; font-family: &quot;Times New Roman&quot;;">
+    <span style="color: #666666; font-family: &quot;arial&quot;;"><span style="color: #666666; font-family: &quot;arial&quot;;"><span style="background-color: white;"><b><span style="color: #a64d79;">없다면&nbsp;<input onchange="test()" id="input7" maxlength="3" size="3" type="text" /> 학습</span></b><span style="color: #666666;">인 것이다.</span></span></span></span></div>
+    <span style="color: #666666; font-family: &quot;arial&quot;;">
+    </span><br><br>
+
+    <div class="flip" onclick="myFunction()">
+    힌트 보기</div>
+    <div id="panel">
+레이블,  분류,  이산,  비지도,  회귀,  분류,  연속,  지도
+
+</div><br>
+</div>
+<script type="text/javascript">
+function test(){
+    if (document.getElementById("input1").value == "연속") {
+      document.getElementById("input1").style.borderColor="#2ecc71";
+    } else if (document.getElementById("input1").value != "") {
+      document.getElementById("input1").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input1").style.borderColor="#f0f0f0";
+    }
+    if (document.getElementById("input2").value == "회귀") {
+      document.getElementById("input2").style.borderColor="#2ecc71"
+    } else if (document.getElementById("input2").value != "") {
+      document.getElementById("input2").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input2").style.borderColor="#f0f0f0";
+    }
+    if (document.getElementById("input3").value == "이산") {
+      document.getElementById("input3").style.borderColor="#2ecc71"
+    } else if (document.getElementById("input3").value != "") {
+      document.getElementById("input3").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input3").style.borderColor="#f0f0f0";
+    }
+    if (document.getElementById("input4").value == "분류") {
+      document.getElementById("input4").style.borderColor="#2ecc71"
+    } else if (document.getElementById("input4").value != "") {
+      document.getElementById("input4").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input4").style.borderColor="#f0f0f0";
+    }
+    if (document.getElementById("input5").value == "레이블") {
+      document.getElementById("input5").style.borderColor="#2ecc71"
+    } else if (document.getElementById("input5").value != "") {
+      document.getElementById("input5").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input5").style.borderColor="#f0f0f0";
+    }
+    if (document.getElementById("input6").value == "지도") {
+      document.getElementById("input6").style.borderColor="#2ecc71"
+    } else if (document.getElementById("input6").value != "") {
+      document.getElementById("input6").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input6").style.borderColor="#f0f0f0";
+    }
+    if (document.getElementById("input7").value == "비지도") {
+      document.getElementById("input7").style.borderColor="#2ecc71"
+    } else if (document.getElementById("input7").value != "") {
+      document.getElementById("input7").style.borderColor="#DC143C";
+    } else {
+      document.getElementById("input7").style.borderColor="#f0f0f0";
+    }
+  }
+
+  function myFunction() {
+    if (document.getElementById("panel").style.visibility != "visible") {
+    document.getElementById("panel").style.visibility = "visible";
+  } else {
+    document.getElementById("panel").style.visibility = "hidden";
+  }
+}
+
+</script>
+
+  </body>
+</html>
