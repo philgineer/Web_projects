@@ -21,7 +21,7 @@
   function test(){
   var select_id = document.getElementById("numiter");
   var sval = select_id.options[select_id.selectedIndex].value;
-  var text1 = '<p style="font-size:13px"><br>당신은 다음 명령을 수행하는 기계다.<br><br> 명령: 1번부터 10번 문제까지, "가설" 칸을 더블클릭하여 아무 숫자를 골라 넣어라.<br></p>';
+  var text1 = '<p style="font-size:13px"><br>당신은 다음 명령을 수행하는 기계다.<br><br> 명령: 1번부터 10번 문제까지, "가설" 칸을 더블클릭(모바일은 길게 터치)하여 아무 숫자를 골라 넣어라.<br></p>';
   var text2='<p style="font-size:13px"><br>당신은 다음 명령을 수행하는 기계다.<br><br> 명령: 1번부터 10번 문제까지 다음을 실행한다.<br><br>1.  "가설-정답" 칸이 <u>초록색</u>일 경우:<br>&nbsp&nbsp&nbsp아무 것도 하지 않는다.<br><br>2.  "가설-정답" 칸이 <u>주황색</u>일 경우:<br>&nbsp&nbsp&nbsp값이 양수이면 "가설"을 1 작은 수로 바꾸고,<br>&nbsp&nbsp&nbsp음수이면 "가설"을 1 큰 수로 바꾼다.<br><br>3.  "가설-정답" 칸이 <u>빨간색</u>일 경우:<br>&nbsp&nbsp&nbsp값이 양수이면 "가설"을 3 작은 수로 바꾸고,<br>&nbsp&nbsp&nbsp음수이면 "가설"을 3 큰 수로 바꾼다.<br><br></p>';
   if(sval == 1){
     document.getElementById("mydiv").innerHTML=text1;
