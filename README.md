@@ -9,5 +9,4 @@ My web projects
 Udemy Course: 20 Web Projects With Vanilla JavaScript<br>
   <i>Check My Javascript Projects: <a href='https://philgineer.github.io/web_projects/vanilla_javascript_projects'>Click here</a> </i></li>
 
-<li>
-  React Todo App: <i><a href='https://philgineer.github.io/web_projects/react_todo/public/index.html'>Click here</a></i> </li>
+
