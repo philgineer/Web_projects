@@ -8,3 +8,5 @@ My web projects
 <li>
 Udemy Course: 20 Web Projects With Vanilla JavaScript<br>
   <i>Check My Javascript Projects: <a href='https://philgineer.github.io/web_projects/vanilla_javascript_projects'>Click here</a> </i></li>
+
+
