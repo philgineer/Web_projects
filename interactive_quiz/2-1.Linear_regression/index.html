@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <script
+      type="text/javascript"
+      src="https://www.gstatic.com/charts/loader.js"
+    ></script>
+    <style>
+      #status {
+        background: lightgrey;
+        padding: 10px;
+        text-align: center;
+        width: 50%;
+      }
+    </style>
+  </header>
+  <body>
+    <h4>1. 좌표 평면과 선형 회귀</h4>
+    <p id="status">데이터 개수를 입력하고 버튼을 누르세요.</p>
+    <form>
+      데이터 개수:
+      <input
+        type="text"
+        id="num"
+        value="20"
+        size="1"
+        maxlength="2"
+        style="margin-left: 10px; height: 20px;"
+        ;
+      /><br /><br />
+      <input
+        type="button"
+        id="submit"
+        value="랜덤 생성"
+        style="margin-left: 10px;"
+      />
+    </form>
+
+    <div id="chart" style="width: 800px; height: 600px; margin: auto;"></div>
+
+    <script>
+      document.getElementById("submit").addEventListener("click", drawChart);
+      google.charts.load("current", { packages: ["corechart"] });
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var num = Number(document.getElementById("num").value);
+
+        var data = new google.visualization.DataTable();
+        data.addColumn("number", "x");
+        data.addColumn("number", "y");
+
+        for (var i = 0; i < num; i++) {
+          var x = 4 * Math.random(100, 1);
+          var y = 0.9 * x * Math.random(100, 1) + 0.3;
+          data.addRow([x, y]);
+        }
+        var options = {
+          chart: { title: "Cartesian Coordinates" },
+          hAxis: { title: "x", minValue: -1, maxValue: 4 },
+          vAxis: { title: "y", minValue: -1, maxValue: 4 },
+          crosshair: { trigger: "both", orientation: "both" },
+          legend: "none",
+          trendlines: {
+            0: {
+              type: "linear",
+              lineWidth: 7,
+              visibleInLegend: true,
+            },
+          },
+        };
+
+        var chart = new google.visualization.ScatterChart(
+          document.getElementById("chart")
+        );
+        chart.draw(data, options);
+      }
+    </script>
+  </body>
+</html>
