@@ -12,9 +12,24 @@ getRandomUser();
 getRandomUser();
 
 // Fetch random users and add money
+// function getRandomUser() {
+//   fetch("https://randomuser.me/api")
+//     .then((res) => res.json())
+//     .then((data) => {
+//       const user = data.results[0];
+
+//       const newUser = {
+//         name: `${user.name.first} ${user.name.last}`,
+//         money: Math.floor(Math.random() * 1000000),
+//       };
+
+//       addData(newUser);
+//     });
+//   }
+
 async function getRandomUser() {
-  // fetch('https://randomuser.me/api')
-  // .then(res => res.json()).then(data => ...)
+  fetch("https://randomuser.me/api");
+
   const res = await fetch("https://randomuser.me/api");
   const data = await res.json();
 
