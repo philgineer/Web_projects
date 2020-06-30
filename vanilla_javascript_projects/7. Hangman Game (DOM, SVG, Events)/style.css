@@ -129,3 +129,9 @@ h1 {
 .notification-container.show {
   transform: translateY(-100px);
 }
+
+#wrap {
+  display: block;
+  margin: 0 auto;
+  width: 200px;
+}

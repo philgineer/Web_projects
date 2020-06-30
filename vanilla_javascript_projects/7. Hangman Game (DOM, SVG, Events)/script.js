@@ -97,15 +97,6 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-// Open keyboard
-function openKeyBoard() {
-  document.getElementById("dummyInput").click();
-  setTimeout(function () {
-    document.getElementById("dummyInput").focus();
-  }, 1);
-  return "keyboard open";
-}
-
 // Restart game
 playAgainBtn.addEventListener("click", () => {
   // Empty arrays

@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
     <title>Hangman</title>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <h1>Hangman</h1>
@@ -56,25 +58,44 @@
     </div>
 
     <!-- Keyboard open for mobile -->
-    <div class="gm4html5_div_class" id="gm4html5_div_id">
-      <canvas id="canvas" width="1" height="1">
-        <p>Your browser doesn't support HTML5 canvas.</p>
-      </canvas>
-      <input
-        id="dummyInput"
-        type="text"
-        style="position: fixed; left: -2000px;"
-        ;
-      />
+    <div id="wrap">
+      <input id="keyboard" type="text" />
     </div>
-
-    <script
-      type="text/javascript"
-      src="html5game/webbcanvas.js?LJGYB=8024099543544"
-    ></script>
-    <script>
-      window.onload = GameMaker_Init;
-    </script>
     <script src="script.js"></script>
+    <script>
+      // Open keyboard
+      /* Use Bootstrap theme */
+
+      /* Note: this plugin only requires the jQuery UI position utility
+   from the jQuery UI library, UNLESS you position the keyboard
+   on your own; then it becomes optional/unneccessary
+*/
+
+      $("#keyboard")
+        .keyboard({
+          layout: "qwerty",
+          css: {
+            // input & preview
+            input: "form-control input-sm",
+            // keyboard container
+            container: "center-block dropdown-menu", // jumbotron
+            // default state
+            buttonDefault: "btn btn-default",
+            // hovered button
+            buttonHover: "btn-primary",
+            // Action keys (e.g. Accept, Cancel, Tab, etc);
+            // this replaces "actionClass" option
+            buttonAction: "active",
+            // used when disabling the decimal button {dec}
+            // when a decimal exists in the input area
+            buttonDisabled: "disabled",
+          },
+        })
+        // activate the typing extension
+        .addTyping({
+          showTyping: true,
+          delay: 50,
+        });
+    </script>
   </body>
 </html>
