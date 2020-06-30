@@ -54,15 +54,27 @@
     <div class="notification-container" id="notification-container">
       <p>You have already entered this letter</p>
     </div>
-    <canvas id="canvas" width="1" height="1">
-      <p>Your browser doesn't support HTML5 canvas.</p>
-    </canvas>
-    <input
-      id="dummyInput"
-      type="text"
-      style="position: fixed; left: -2000px;"
-      ;
-    />
+
+    <!-- Keyboard open for mobile -->
+    <div class="gm4html5_div_class" id="gm4html5_div_id">
+      <canvas id="canvas" width="1" height="1">
+        <p>Your browser doesn't support HTML5 canvas.</p>
+      </canvas>
+      <input
+        id="dummyInput"
+        type="text"
+        style="position: fixed; left: -2000px;"
+        ;
+      />
+    </div>
+
+    <script
+      type="text/javascript"
+      src="html5game/webbcanvas.js?LJGYB=8024099543544"
+    ></script>
+    <script>
+      window.onload = GameMaker_Init;
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
