@@ -4,10 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="style.css" />
-    <link rel="stylesheet" href="jquery.onScreenKeyboard.js" />
     <title>Hangman</title>
-    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
-    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
   </head>
   <body>
     <h1>Hangman</h1>
@@ -58,25 +55,6 @@
       <p>You have already entered this letter</p>
     </div>
 
-    <!-- Keyboard open for mobile -->
-    <form id="input_container" action="demo.html">
-      <input
-        type="text"
-        id="input1"
-        class="osk-trigger"
-        placeholder="Keyboard input for mobile"
-        data-osk-options="disableReturn"
-      />
-    </form>
     <script src="script.js"></script>
-    <script src="jquery.onScreenKeyboard.js"></script>
-    <script>
-      $(function () {
-        $("#input_container").children(".osk-trigger").onScreenKeyboard({
-          rewireReturn: "submit",
-          rewireTab: true,
-        });
-      });
-    </script>
   </body>
 </html>
