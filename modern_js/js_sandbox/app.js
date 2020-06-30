@@ -1,19 +1,27 @@
-const person = {
-  firstName: "Steve",
-  lastName: "Smith",
-  age: 30,
-  email: "sdfsdfdsf",
-  hobbies: ["music", "sports"],
-  address: {
-    city: "Miami",
-    state: "FL",
-  },
-  getBirthYear: function () {
-    return 2020 - this.age;
-  },
-};
+let day;
 
-let val;
+switch (5) {
+  case 0:
+    day = "SUN";
+    break;
+  case 1:
+    day = "MON";
+    break;
+  case 2:
+    day = "TUE";
+    break;
+  case 3:
+    day = "WED";
+    break;
+  case 4:
+    day = "THU";
+    break;
+  case 5:
+    day = "FRI";
+    break;
+  case 6:
+    day = "SAT";
+    break;
+}
 
-val = person.getBirthYear();
-console.log(val);
+console.log(day);
