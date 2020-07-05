@@ -1,9 +1,9 @@
-const user = {
-  first: "jon",
-  last: "doe",
-  age: 30,
-};
+let val;
 
-for (let x in user) {
-  console.log(x, user[x]);
-}
+val = Array.from(document.scripts);
+
+val.forEach(function (script) {
+  console.log(script);
+});
+
+console.log(val);
