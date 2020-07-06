@@ -6,7 +6,9 @@ const form = document.getElementById("form");
 const text = document.getElementById("text");
 const amount = document.getElementById("amount");
 
-const dummyTransactions = [{ id: 1, text: "Cash", amount: 100 }];
+const dummyTransactions = [
+  { id: 1, text: "Click here to show remove button | 클릭", amount: 10 },
+];
 
 const localStorageTransactions = JSON.parse(
   localStorage.getItem("transactions")
