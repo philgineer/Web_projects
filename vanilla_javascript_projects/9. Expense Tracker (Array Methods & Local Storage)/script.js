@@ -13,7 +13,6 @@ const dummyTransactions = [
 const localStorageTransactions = JSON.parse(
   localStorage.getItem("transactions")
 );
-console.log(localStorageTransactions);
 
 let transactions =
   localStorage.getItem("transactions") !== null
@@ -36,9 +35,6 @@ function addTransaction(e) {
     transactions.push(transaction);
 
     addTransactionDOM(transaction);
-
-    console.log(transaction);
-    console.log(transactions);
 
     updateValues();
 
