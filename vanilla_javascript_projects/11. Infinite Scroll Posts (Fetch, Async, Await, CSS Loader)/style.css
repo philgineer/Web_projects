@@ -23,7 +23,7 @@ h1 {
 }
 
 .filter-container {
-  margin-top: 20px;
+  margin: auto;
   width: 80vh;
   max-width: 800px;
 }
@@ -32,6 +32,10 @@ h1 {
   width: 100%;
   padding: 12px;
   font-size: 16px;
+}
+
+.posts-container {
+  margin: auto;
 }
 
 .post {
@@ -113,6 +117,23 @@ h1 {
 
   50% {
     transform: translateY(-10px);
+  }
+}
+
+@media (max-width: 500px) {
+  .posts-container {
+    margin: auto;
+  }
+
+  .post {
+    position: relative;
+    background-color: #4992d3;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 3px;
+    padding: 10px;
+    margin: 40px 30px;
+    display: flex;
+    width: auto;
   }
 }
 
