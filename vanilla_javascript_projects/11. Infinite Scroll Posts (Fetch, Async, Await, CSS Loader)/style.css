@@ -123,8 +123,8 @@ h1 {
 }
 
 @media (max-width: 500px) {
-  .posts-container {
-    margin: auto;
+  .filter-container {
+    width: 50vh;
   }
 
   .post {
