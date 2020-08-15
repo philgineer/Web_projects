@@ -80,6 +80,8 @@ h1 button {
   height: 100%;
   width: 100%;
   transform: translateX(0) rotateY(0);
+  border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .card.right {
