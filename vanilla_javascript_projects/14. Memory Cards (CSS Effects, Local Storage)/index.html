@@ -15,49 +15,19 @@
     </title>
   </head>
   <body>
-    <button id="clear" class="clear btn">
-      <i class="fas fa-trash"></i> Clear Cards
+    <button id="clear" class="clear btn btn-small">
+      <i class="fas fa-trash"></i> Clear
     </button>
 
     <h1>
-      Memory Cards
-      <span> | 단어 암기 카드</span>
+      Flash Cards
+      <span> | 단어장</span>
       <button id="show" class="btn btn-small">
-        <i class="fas fa-plus"></i> Add New Card
+        <i class="fas fa-plus"></i> New
       </button>
     </h1>
 
-    <div id="cards-container" class="cards">
-      <div class="card active">
-        <div class="inner-card">
-          <div class="inner-card-front">
-            <p>
-              What is PHP?
-              <span>| PHP가 뭡네까?</span>
-            </p>
-          </div>
-          <div class="inner-card-back">
-            <p>
-              A programming language
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="card">
-        <div class="inner-card">
-          <div class="inner-card-front">
-            <p>
-              What is PHP?
-            </p>
-          </div>
-          <div class="inner-card-back">
-            <p>
-              A programming language
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id="cards-container" class="cards"></div>
 
     <div class="navigation">
       <button id="prev" class="nav-button">
@@ -72,20 +42,20 @@
     </div>
 
     <div id="add-container" class="add-container">
-      <h1>
-        Add New Cards
+      <h2>
+        Add New Card
         <span>| 새 카드 추가</span>
-        <button id="hide" class="btn btn-small btn-ghost">
+        <button id="hide" class="btn btn-ghost">
           <i class="fas fa-times"></i>
         </button>
-      </h1>
+      </h2>
 
       <div class="form-group">
-        <label for="question">Question</label>
+        <label for="question">Question<span>| 질문</span></label>
         <textarea id="question" placeholder="Enter Question..."></textarea>
       </div>
       <div class="form-group">
-        <label for="answer">Answer</label>
+        <label for="answer">Answer<span>| 답변</span></label>
         <textarea id="answer" placeholder="Enter Answer..."></textarea>
       </div>
 

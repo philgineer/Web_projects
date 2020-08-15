@@ -1,9 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Caveat:wght@700&family=Single+Day&display=swap");
 
 span {
-  font-family: Single Day;
+  font-family: "Single Day", cursive;
   color: darkgray;
-  font-size: 18px;
+  font-size: 0.8em;
   margin-left: 6px;
 }
 
@@ -17,7 +17,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 80vh;
   margin: 0;
   overflow: hidden;
   font-family: "Caveat", cursive;
@@ -26,11 +26,13 @@ body {
 h1 {
   position: relative;
   font-size: 40px;
+  margin-bottom: 90px;
 }
 
 h1 button {
   position: absolute;
-  right: 0;
+  top: 80px;
+  right: 60px;
   transform: translate(120%, -50%);
   z-index: 2;
 }
@@ -57,7 +59,7 @@ h1 button {
 
 .clear {
   position: absolute;
-  bottom: 30px;
+  bottom: 60px;
   left: 30px;
 }
 
@@ -65,7 +67,7 @@ h1 button {
   perspective: 1000px;
   position: relative;
   height: 300px;
-  width: 500px;
+  width: 450px;
   max-width: 100%;
 }
 
@@ -77,12 +79,19 @@ h1 button {
   left: 0;
   height: 100%;
   width: 100%;
+  transform: translateX(50%) rotateY(-20deg);
+  transition: transform 0.3s ease, opacity 0.3s ease;
 }
 
 .card.active {
   cursor: pointer;
   opacity: 1;
   z-index: 10;
+  transform: translateX(0) rotateY(0);
+}
+
+.card.left {
+  transform: translateX(-50%) rotateY(20deg);
 }
 
 .inner-card {
@@ -91,10 +100,17 @@ h1 button {
   height: 100%;
   width: 100%;
   position: relative;
+  transform-style: preserve-3d;
+  transition: transform 0.4s ease;
+}
+
+.card.show-answer .inner-card {
+  transform: rotateX(180deg);
 }
 
 .inner-card-front,
 .inner-card-back {
+  backface-visibility: hidden;
   position: absolute;
   top: 0;
   left: 0;
@@ -104,4 +120,103 @@ h1 button {
   height: 100%;
   width: 100%;
   background: #fff;
+}
+
+.inner-card-front {
+  transform: rotateX(0deg);
+  z-index: 2;
+}
+
+.inner-card-back {
+  transform: rotateX(180deg);
+}
+
+.inner-card-front::after,
+.inner-card-back::after {
+  content: "\f021";
+  font-family: "Font Awesome 5 Free", "Caveat", cursive;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-weight: bold;
+  font-size: 16px;
+  color: #ddd;
+}
+
+.navigation {
+  display: flex;
+  margin: 20px 0;
+}
+
+.navigation .nav-button {
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.navigation p {
+  margin: 0 25px;
+}
+
+.add-container {
+  opacity: 0;
+  z-index: -1;
+  background-color: #f0f0f0;
+  border-top: 2px solid #eee;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 10px 0;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  transition: 0.3s ease;
+}
+
+.add-container.show {
+  opacity: 1;
+  z-index: 2;
+}
+
+.add-container h2 button {
+  margin-left: 20px;
+}
+
+.add-container h3 {
+  margin: 10px 0;
+}
+
+.form-group label {
+  display: block;
+  margin: 20px 0 10px;
+}
+
+.form-group textarea {
+  border: 1px solid #aaa;
+  border-radius: 3px;
+  font-size: 16px;
+  padding: 12px;
+  min-width: 500px;
+  max-width: 100%;
+}
+
+@media (max-width: 600px) {
+  body {
+    width: 100%;
+  }
+  .cards {
+    height: 200px;
+    width: 300px;
+    max-width: 100%;
+  }
+  .add-container {
+    width: 100%;
+  }
+  .form-group textarea {
+    min-width: 200px;
+    max-width: 100%;
+  }
 }
