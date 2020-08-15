@@ -66,8 +66,8 @@ h1 button {
 .cards {
   perspective: 1000px;
   position: relative;
-  height: 300px;
-  width: 450px;
+  height: 250px;
+  width: 400px;
   max-width: 100%;
 }
 
@@ -79,8 +79,13 @@ h1 button {
   left: 0;
   height: 100%;
   width: 100%;
-  transform: translateX(50%) rotateY(-20deg);
-  transition: transform 0.3s ease, opacity 0.3s ease;
+  transform: translateX(0) rotateY(0);
+}
+
+.card.right {
+  transform: translateX(30%) rotateY(-20deg);
+  object-fit: cover;
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .card.active {
@@ -88,10 +93,12 @@ h1 button {
   opacity: 1;
   z-index: 10;
   transform: translateX(0) rotateY(0);
+  transition: transform 0.3s ease, opacity 0.1s;
 }
 
 .card.left {
-  transform: translateX(-50%) rotateY(20deg);
+  transform: translateX(-30%) rotateY(20deg);
+  transition: transform 0.4s ease, opacity 0.4s ease;
 }
 
 .inner-card {
@@ -203,13 +210,13 @@ h1 button {
   max-width: 100%;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
   body {
     width: 100%;
   }
   .cards {
-    height: 200px;
-    width: 300px;
+    height: 180px;
+    width: 250px;
     max-width: 100%;
   }
   .add-container {

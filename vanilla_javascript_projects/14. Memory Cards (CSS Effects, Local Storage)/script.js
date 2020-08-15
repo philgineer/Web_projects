@@ -84,31 +84,51 @@ function getCardsData() {
 nextBtn.addEventListener("click", rightBtn);
 
 function rightBtn() {
-  for (i = 0; i < cardsEl.length; i++) {
-    cardsEl[i].className = "card right";
+  if (cardsEl.length == 2) {
+    cardsEl[currentActiveCard].className = "card right";
+    currentActiveCard += 1;
+    if (currentActiveCard > cardsEl.length - 1) {
+      currentActiveCard = 0;
+    }
+    cardsEl[currentActiveCard].className = "card active";
+    updateCurrentText();
+  } else {
+    for (i = 0; i < cardsEl.length; i++) {
+      cardsEl[i].className = "card right";
+    }
+    cardsEl[currentActiveCard].className = "card left";
+    currentActiveCard += 1;
+    if (currentActiveCard > cardsEl.length - 1) {
+      currentActiveCard = 0;
+    }
+    cardsEl[currentActiveCard].className = "card active";
+    updateCurrentText();
   }
-  cardsEl[currentActiveCard].className = "card left";
-  currentActiveCard += 1;
-  if (currentActiveCard > cardsEl.length - 1) {
-    currentActiveCard = 0;
-  }
-  cardsEl[currentActiveCard].className = "card active";
-  updateCurrentText();
 }
 
 prevBtn.addEventListener("click", leftBtn);
 
 function leftBtn() {
-  for (i = 0; i < cardsEl.length; i++) {
-    cardsEl[i].className = "card left";
+  if (cardsEl.length === 2) {
+    cardsEl[currentActiveCard].className = "card left";
+    currentActiveCard += 1;
+    if (currentActiveCard > cardsEl.length - 1) {
+      currentActiveCard = 0;
+    }
+    cardsEl[currentActiveCard].className = "card active";
+    updateCurrentText();
+  } else {
+    for (i = 0; i < cardsEl.length; i++) {
+      cardsEl[i].className = "card left";
+    }
+    cardsEl[currentActiveCard].className = "card right";
+    currentActiveCard -= 1;
+    if (currentActiveCard < 0) {
+      currentActiveCard = cardsEl.length - 1;
+    }
+    cardsEl[currentActiveCard].className = "card active";
+    updateCurrentText();
   }
-  cardsEl[currentActiveCard].className = "card right";
-  currentActiveCard -= 1;
-  if (currentActiveCard < 0) {
-    currentActiveCard = cardsEl.length - 1;
-  }
-  cardsEl[currentActiveCard].className = "card active";
-  updateCurrentText();
 }
 
 // Key arrow detection
