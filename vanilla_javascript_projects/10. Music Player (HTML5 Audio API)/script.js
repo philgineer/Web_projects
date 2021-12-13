@@ -30,7 +30,11 @@ loadSong(songs[songIndex]);
 function loadSong(song) {
   title.innerText = song;
   audio.src = `music/${song}.mp3`;
+  if (song == "고양이") {
+    cover.src = `%images/E1%84%80%E1%85%A9%E1%84%8B%E1%85%A3%E1%86%BC%E1%84%8B%E1%85%B5.jpg`;
+  } else {
   cover.src = `images/${song}.jpg`;
+  }
 }
 
 // Play song
