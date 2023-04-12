@@ -10,5 +10,5 @@ My Web Projects with Vanilla JavaScript<br></li>
         <a href="https://philgineer.github.io/Web_projects/vanilla_javascript_projects/14.%20Memory%20Cards%20(CSS%20Effects%2C%20Local%20Storage)">단어 암기 카드 (CSS Effects, Local Storage)</a><br/>
   <a href='https://philgineer.github.io/Web_projects/vanilla_javascript_projects'>View full projects</a><br/><br/>
 
-<li><a href='https://www.philgineer.com/p/blog-page.html'><머신러닝 한방 정리></a> 강의 반응형 퀴즈 구현<br>
+<li><a href='https://www.philgineer.com/p/blog-page.html'>[비전공자를 위한 딥러닝]</a> 강의 반응형 퀴즈 구현<br>
   <i>Check My Interactive Quizzes: <a href='https://philgineer.github.io/Web_projects/'>Click here</a> </i></li>
